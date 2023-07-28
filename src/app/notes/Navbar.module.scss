@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  gap: 1em;
+  margin-top: 20px;
+
+  .searchbar_container {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #fff;
+  }
+
+  svg {
+    margin: 0 5px 0 5px;
+  }
+
+  .searchbar {
+    width: 600px;
+    height: 30px;
+    flex-shrink: 0;
+    background: none;
+  }
+
+  input {
+    color: white;
+    border: none;
+    outline: 0;
+  }
+
+  input::placeholder {
+    font-family: "Fredoka";
+    color: white;
+    font-weight: 600;
+  }
+
+  .add_note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: "Fredoka";
+    background: none;
+    border: none;
+    margin-right: 50px;
+
+    p {
+      text-align: left;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      position: absolute;
+      padding-left: 70px;
+      padding-bottom: 20px;
+    }
+  }
+  .hasek {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: #272727;
+    color: #d5dbd4;
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
