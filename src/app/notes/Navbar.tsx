@@ -54,7 +54,7 @@ const Navbar = () => {
         <p>Nova Bilješka</p>
       </button>
       <a href="https://ispravi.me/" target="_blank" className={styles.hasek}>
-        Hašek
+        HAŠEK
       </a>
     </div>
   );

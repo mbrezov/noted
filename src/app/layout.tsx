@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 
 import "./global.scss";
 
-const inter = Fredoka();
+const inter = Fredoka({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Noted :)",
