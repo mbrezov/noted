@@ -32,6 +32,7 @@ const NoteCard = (props: any) => {
 
   return (
     <div className={`${styles.notecard} ${selected ? styles.selected : ""}`}>
+      <div className={styles.background}></div>
       <div className={styles.title}>{props.title}</div>
       <button className={styles.copy_button} onClick={copyContent}>
         <svg
