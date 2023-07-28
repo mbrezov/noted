@@ -22,6 +22,10 @@ const NoteCard = (props: any) => {
     }
   };
 
+  const noPrefix = () => {
+    setPrefix("");
+  };
+
   const handleSelected = () => {
     setSelected((prevState) => !prevState);
   };
@@ -61,6 +65,22 @@ const NoteCard = (props: any) => {
           : props.content}
       </div>
       <div className={styles.footer}>
+        {prefix ? (
+          <button className={styles.button_no} onClick={noPrefix}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 25 25"
+              fill="none"
+            >
+              <path
+                d="M12.333 0C5.523 0 0 5.52 0 12.333C0 19.146 5.523 24.666 12.333 24.666C19.145 24.666 24.666 19.146 24.666 12.333C24.666 5.52 19.146 0 12.333 0ZM12.333 3C14.183 3 15.905 3.548 17.357 4.48L4.48 17.357C3.51364 15.8596 2.99976 14.1152 3 12.333C3 7.187 7.187 3 12.333 3ZM12.333 21.666C10.5509 21.6658 8.80661 21.1519 7.309 20.186L20.185 7.309C21.1514 8.80642 21.6652 10.5508 21.665 12.333C21.665 17.479 17.479 21.666 12.333 21.666Z"
+                fill="#F8F8F8"
+              />
+            </svg>
+          </button>
+        ) : null}
         {!prefixOn ? (
           <button className={styles.button} onClick={prefixChange}>
             <div className={styles.button_circle_male}>

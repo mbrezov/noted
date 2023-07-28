@@ -47,6 +47,17 @@
     align-items: center;
     height: 50px;
 
+    .button_no {
+      display: flex;
+      align-items: center;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      background: #1b1b1b;
+      margin-right: 5px;
+    }
+
     .button {
       display: flex;
       align-items: center;
