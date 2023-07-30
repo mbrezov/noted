@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 
 import "./global.scss";
 
-const inter = Fredoka({ subsets: ["latin"] });
+const fredoka = Fredoka({ weight: ["400", "600", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Noted :)",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={fredoka.className}>
         <Sidebar />
         {children}
       </body>
