@@ -1,7 +1,6 @@
 import styles from "./NoteCard.module.scss";
 import NoteCard from "./NoteCard";
 import Navbar from "./Navbar";
-import Sidebar from "../Sidebar";
 
 async function getNotes() {
   const res = await fetch(
