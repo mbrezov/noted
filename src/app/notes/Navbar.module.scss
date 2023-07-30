@@ -1,5 +1,4 @@
 .container {
-  font-family: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,17 +44,16 @@
     position: relative;
     background: none;
     border: none;
+    padding: 0;
     margin-right: 50px;
 
     p {
-      font-family: inherit;
       text-align: left;
       color: white;
       font-size: 1.2rem;
       font-weight: 600;
       position: absolute;
-      padding-left: 70px;
-      padding-bottom: 20px;
+      margin: 0 0 20px 70px;
     }
   }
   .hasek {
