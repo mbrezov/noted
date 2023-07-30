@@ -1,4 +1,5 @@
 .container {
+  font-family: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,13 +32,13 @@
   }
 
   input::placeholder {
-    font-family: "Fredoka";
+    font-family: inherit;
     color: white;
     font-weight: 600;
   }
 
   .add_note {
-    font-family: "Fredoka";
+    font-family: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,6 +48,7 @@
     margin-right: 50px;
 
     p {
+      font-family: inherit;
       text-align: left;
       color: white;
       font-size: 1.2rem;
@@ -57,6 +59,7 @@
     }
   }
   .hasek {
+    font-family: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
