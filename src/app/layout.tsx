@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={fredoka.className}>
       <body className={fredoka.className}>
         <Sidebar />
         {children}
