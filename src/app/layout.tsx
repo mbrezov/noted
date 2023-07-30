@@ -4,7 +4,11 @@ import Sidebar from "./Sidebar";
 
 import "./global.scss";
 
-const fredoka = Fredoka({ weight: ["400", "600", "700"], subsets: ["latin"] });
+const fredoka = Fredoka({
+  weight: ["400", "600", "700"],
+  subsets: ["latin", "hebrew", "latin-ext"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Noted :)",
