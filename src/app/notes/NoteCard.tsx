@@ -35,7 +35,8 @@ const NoteCard = (props: any) => {
       <div className={styles.background}></div>
       <div className={styles.title}>{props.title}</div>
       <button className={styles.copy_button} onClick={copyContent}>
-        <svg
+        <p>copy</p>
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -57,17 +58,39 @@ const NoteCard = (props: any) => {
               <rect width="24" height="24" fill="white" />
             </clipPath>
           </defs>
-        </svg>
+        </svg> */}
       </button>
-      <div className={styles.content} onClick={handleSelected}>
+      <button className={styles.select_button} onClick={handleSelected}>
+        {/* <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+        >
+          <path
+            d="M17 23H23M23 23V17M23 23L16 16M8 2H2M2 2V8M2 2L9 9M17 2H23M23 2V8M23 2L16 9M8 23H2M2 23V17M2 23L9 16"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg> */}
+        {selected ? <p>minimize</p> : <p>maximize</p>}
+      </button>
+      <div className={styles.content}>
         <div>{prefix}</div>
-        {props.content.length > 250 && !selected
-          ? `${props.content.slice(0, 250)}...`
+        {props.content.length > 320 && !selected
+          ? `${props.content.slice(0, 320)}...`
           : props.content}
       </div>
       <div className={styles.footer}>
         {prefix ? (
-          <button className={styles.button_no} onClick={noPrefix}>
+          <button
+            className={styles.button_no}
+            onClick={noPrefix}
+            title="Obriši prefiks"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -83,7 +106,11 @@ const NoteCard = (props: any) => {
           </button>
         ) : null}
         {!prefixOn ? (
-          <button className={styles.button} onClick={prefixChange}>
+          <button
+            className={styles.button}
+            onClick={prefixChange}
+            title="Odaberi prefiks gospođa/gospodin"
+          >
             <div className={styles.button_circle_male}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +128,11 @@ const NoteCard = (props: any) => {
           </button>
         ) : (
           <div>
-            <button className={styles.button} onClick={prefixChange}>
+            <button
+              className={styles.button}
+              onClick={prefixChange}
+              title="Odaberi prefiks gospođa/gospodin"
+            >
               <div className={styles.button_circle_female}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

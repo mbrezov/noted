@@ -2,7 +2,11 @@
   margin: 20px 0 30px 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  gap: 30px;
+
+  ::selection {
+    background-color: #870653;
+  }
 }
 
 .notecard {
@@ -30,20 +34,74 @@
     color: whitesmoke;
   }
 
-  .copy_button {
-    background: none;
+  .select_button {
+    background: #c017a1;
+    width: 25px;
+    height: 25px;
     border: none;
     position: absolute;
     top: 0;
     right: 0;
-    margin: 12px 8px 0 0;
+    margin: 5px 5px 0px 0px;
+
+    p {
+      display: none;
+    }
+  }
+
+  .select_button:hover {
+    font-family: "Fredoka";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c017a1;
+    width: 70px;
+    transition: 500ms;
+
+    p {
+      animation: fadeIn 1500ms;
+      display: block;
+      color: white;
+    }
+  }
+
+  .copy_button {
+    background: #068758;
+    width: 25px;
+    height: 25px;
+    border: none;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    border-radius: 100px;
+    margin: 10px 5px 0px 0px;
+
+    p {
+      display: none;
+    }
+  }
+
+  .copy_button:hover {
+    font-family: "Fredoka";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #068758;
+    width: 60px;
+    font-weight: 600;
+    transition: 500ms;
+    p {
+      animation: fadeIn 1500ms;
+      display: block;
+      color: white;
+    }
   }
 
   .content {
     font-size: 0.875rem;
     padding-left: 15px;
     color: whitesmoke;
-    height: 210px;
+    height: 250px;
     width: 220px;
     line-height: 1.3rem;
     overflow: hidden;
@@ -79,6 +137,7 @@
       margin: 0 10px 0 0;
 
       .button_circle_male {
+        animation: fadeIn 500ms;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -90,6 +149,7 @@
       }
 
       .button_circle_female {
+        animation: fadeIn 500ms;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -114,6 +174,7 @@
   }
 
   .content {
+    animation: fadeIn 1200ms;
     font-size: 0.875rem;
     padding-left: 15px;
     color: whitesmoke;
@@ -128,5 +189,14 @@
   .content::-webkit-scrollbar-thumb {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
