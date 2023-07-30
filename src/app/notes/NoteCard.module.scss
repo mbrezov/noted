@@ -1,10 +1,8 @@
 .notes_container {
-  margin: 20px 0 30px 0;
+  margin: 20px 40px 30px 40px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  background-color: #068758;
-  width: 1090px;
   ::selection {
     background-color: #870653;
   }
