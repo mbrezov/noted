@@ -14,12 +14,12 @@ const pb = new PocketBase("https://noted.pockethost.io");
 //   return data?.items as any[];
 // }
 
+// expand: "category",
 async function getNotes() {
   const notes = await pb.collection("Notes").getFullList({
-    expand: "category",
     sort: "-created",
+    expand: "category",
   });
-
   return notes as any[];
 }
 
