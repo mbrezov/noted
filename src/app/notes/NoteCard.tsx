@@ -85,6 +85,7 @@ const NoteCard = (props: any) => {
           : props.content}
       </div>
       <div className={styles.footer}>
+        <p className={styles.category}>{props.category}</p>
         {prefix ? (
           <button
             className={styles.button_no}
