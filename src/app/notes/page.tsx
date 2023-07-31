@@ -5,23 +5,23 @@ import Navbar from "./Navbar";
 
 const pb = new PocketBase("https://noted.pockethost.io");
 
-// async function getNotes() {
-//   const res = await fetch(
-//     "https://noted.pockethost.io/api/collections/notes/records?page=1&perPage=30",
-//     { cache: "no-store" }
-//   );
-//   const data = await res.json();
-//   return data?.items as any[];
-// }
-
-// expand: "category",
 async function getNotes() {
-  const notes = await pb.collection("Notes").getFullList({
-    sort: "-created",
-    expand: "category",
-  });
-  return notes as any[];
+  const res = await fetch(
+    "https://noted.pockethost.io/api/collections/notes/records?expand=category",
+    { cache: "no-store" }
+  );
+  const data = await res.json();
+  return data?.items as any[];
 }
+
+// // expand: "category",
+// async function getNotes() {
+//   const notes = await pb.collection("Notes").getFullList({
+//     sort: "-created",
+//     expand: "category",
+//   });
+//   return notes as any[];
+// }
 
 export default async function NotesPage() {
   const notes = await getNotes();
