@@ -15,4 +15,21 @@
     height: 45px;
     box-shadow: inset 0px -18px 0px #3549b0;
   }
+  .category {
+    display: inline-flex;
+    justify-content: flex-start;
+    width: 150px;
+    gap: 5px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .category_color {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 100px;
+    background: #f44250;
+  }
 }
