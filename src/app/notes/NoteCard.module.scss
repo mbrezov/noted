@@ -34,6 +34,9 @@
   }
 
   .select_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: inherit;
     background: #c017a1;
     width: 25px;
@@ -47,12 +50,13 @@
     p {
       display: none;
     }
+
+    svg {
+      padding-top: 2px;
+    }
   }
 
   .select_button:hover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: #c017a1;
     width: 70px;
     transition: 500ms;
@@ -62,9 +66,16 @@
       display: block;
       color: white;
     }
+
+    svg {
+      display: none;
+    }
   }
 
   .copy_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: inherit;
     background: #068758;
     width: 25px;
@@ -79,20 +90,30 @@
     p {
       display: none;
     }
+
+    .copy_icon {
+      color: #e0e0e0;
+      font-size: 1.25rem;
+      font-weight: 500;
+      display: block;
+      padding-bottom: 4px;
+    }
   }
 
   .copy_button:hover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: #068758;
     width: 60px;
     font-weight: 600;
     transition: 500ms;
+
     p {
       animation: fadeIn 1500ms;
       display: block;
       color: white;
+    }
+
+    .copy_icon {
+      display: none;
     }
   }
 
