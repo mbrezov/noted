@@ -1,6 +1,8 @@
 "use client";
 import styles from "./Sidebar.module.scss";
 import { useState, useEffect } from "react";
+import CreateNote from "./notes/CreateNote";
+import CreateCategory from "./CreateCategory";
 
 const Sidebar = () => {
   const [data, setData] = useState([]);
@@ -12,8 +14,6 @@ const Sidebar = () => {
       });
   }, []);
 
-  console.log(data);
-
   return (
     <div className={styles.container}>
       <h1>Kategorije</h1>
@@ -24,6 +24,10 @@ const Sidebar = () => {
             {cat.name}
           </div>
         ))}
+      <div>
+        <CreateCategory />
+      </div>
+      {/* <CreateNote category={data} /> */}
     </div>
   );
 };

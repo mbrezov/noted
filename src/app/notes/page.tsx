@@ -11,17 +11,8 @@ async function getNotes() {
     { cache: "no-store" }
   );
   const data = await res.json();
-  return data?.items as any[];
+  return data.items as any[];
 }
-
-// // expand: "category",
-// async function getNotes() {
-//   const notes = await pb.collection("Notes").getFullList({
-//     sort: "-created",
-//     expand: "category",
-//   });
-//   return notes as any[];
-// }
 
 export default async function NotesPage() {
   const notes = await getNotes();
@@ -31,18 +22,42 @@ export default async function NotesPage() {
       <Navbar />
       <div className={styles.notes_container}>
         {notes?.map((note) => {
-          // console.log(note);
-          return <Note key={note.id} note={note} />;
+          return <NoteCard key={note.id} note={note} />;
         })}
       </div>
     </div>
   );
 }
 
-function Note({ note }: any) {
-  const { id, title, content, expand } = note || {};
+export interface Data {
+  page: number;
+  perPage: number;
+  totalItems: number;
+  totalPages: number;
+  items: Item[];
+}
 
-  return (
-    <NoteCard title={title} content={content} category={expand.category.name} />
-  );
+export interface Item {
+  category: string;
+  collectionId: string;
+  collectionName: string;
+  content: string;
+  created: string;
+  expand: Expand;
+  id: string;
+  title: string;
+  updated: string;
+}
+
+export interface Expand {
+  category: Category;
+}
+
+export interface Category {
+  collectionId: string;
+  collectionName: string;
+  created: string;
+  id: string;
+  name: string;
+  updated: string;
 }

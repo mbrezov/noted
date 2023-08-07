@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  .create_form {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #5160aa43;
+    border-radius: 10px;
+
+    input {
+      color: white;
+      font-family: inherit;
+      outline: none;
+      border: none;
+      height: 30px;
+      width: 100px;
+      background: none;
+      padding-left: 10px;
+    }
+
+    button {
+      font-weight: 600;
+      color: white;
+      font-family: inherit;
+      background: #3549b0;
+      border-radius: 10px;
+      border: none;
+    }
+  }
+
+  .add_note {
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 50px;
+
+    p {
+      text-align: left;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      position: absolute;
+      margin: 0 0 20px 90px;
+    }
+  }
+}

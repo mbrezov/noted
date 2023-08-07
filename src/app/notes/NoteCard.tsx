@@ -2,13 +2,19 @@
 import { useState } from "react";
 import styles from "./NoteCard.module.scss";
 
-const NoteCard = (props: any) => {
+import { Item } from "./page";
+
+interface IProps {
+  note: Item;
+}
+
+const NoteCard = (props: IProps) => {
   const [prefix, setPrefix] = useState("Poštovani gospodine XXXXX,");
   const [prefixOn, setPrefixOn] = useState(false);
   const [selected, setSelected] = useState(false);
 
   const copyContent = () => {
-    const textToCopy = `${prefix}\n${props.content}`;
+    const textToCopy = `${prefix}\n${props.note.content}`;
     navigator.clipboard.writeText(textToCopy);
   };
 
@@ -33,7 +39,7 @@ const NoteCard = (props: any) => {
   return (
     <div className={`${styles.notecard} ${selected ? styles.selected : ""}`}>
       <div className={styles.background}></div>
-      <div className={styles.title}>{props.title}</div>
+      <div className={styles.title}>{props.note.title}</div>
       <button className={styles.copy_button} onClick={copyContent}>
         <div>
           <p>copy</p>
@@ -91,12 +97,12 @@ const NoteCard = (props: any) => {
       </button>
       <div className={styles.content}>
         <div>{prefix}</div>
-        {props.content.length > 320 && !selected
-          ? `${props.content.slice(0, 320)}...`
-          : props.content}
+        {props.note.content.length > 320 && !selected
+          ? `${props.note.content.slice(0, 320)}...`
+          : props.note.content}
       </div>
       <div className={styles.footer}>
-        <p className={styles.category}>{props.category}</p>
+        <p className={styles.category}>{props.note.expand.category.name}</p>
         {prefix ? (
           <button
             className={styles.button_no}
