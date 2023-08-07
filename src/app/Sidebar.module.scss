@@ -45,3 +45,13 @@
     margin-top: auto;
   }
 }
+
+.category_container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.category_container::-webkit-scrollbar-thumb {
+  background-color: #6e6b6b;
+  outline: 1px solid #6e6b6b;
+  border-radius: 5px;
+}
