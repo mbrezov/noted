@@ -8,7 +8,6 @@
   top: 0;
   flex-shrink: 0;
   position: sticky;
-  overflow: hidden;
 
   h1 {
     color: white;
@@ -18,8 +17,8 @@
   }
 
   .category_container {
-    overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding-left: 15px;
 
     .category {
