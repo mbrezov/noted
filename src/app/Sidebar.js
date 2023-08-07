@@ -39,7 +39,26 @@ const Sidebar = () => {
                 style={{ backgroundColor: cat.color }}
               ></div>
               {cat.name}
-              <button onClick={() => deleteCategory(cat.id)}>Delete</button>
+              <button
+                className={styles.delete_button}
+                onClick={() => deleteCategory(cat.id)}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="14"
+                  viewBox="0 0 20 14"
+                  fill="none"
+                >
+                  <path
+                    d="M14 16H20M21 10V9C21 8.46957 20.7893 7.96086 20.4142 7.58579C20.0391 7.21071 19.5304 7 19 7H5C4.46957 7 3.96086 7.21071 3.58579 7.58579C3.21071 7.96086 3 8.46957 3 9V11C3 11.5304 3.21071 12.0391 3.58579 12.4142C3.96086 12.7893 4.46957 13 5 13H11"
+                    stroke="#F8F8F8"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
             </div>
           ))}
       </div>
