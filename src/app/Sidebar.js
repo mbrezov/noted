@@ -21,7 +21,10 @@ const Sidebar = () => {
         {data &&
           data.map((cat) => (
             <div key={cat.id} className={styles.category}>
-              <div className={styles.category_color}></div>
+              <div
+                className={styles.category_color}
+                style={{ backgroundColor: cat.color }}
+              ></div>
               {cat.name}
             </div>
           ))}

@@ -59,5 +59,6 @@ export interface Category {
   created: string;
   id: string;
   name: string;
+  color: string;
   updated: string;
 }

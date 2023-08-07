@@ -43,14 +43,14 @@ const NoteCard = (props: IProps) => {
       <button className={styles.copy_button} onClick={copyContent}>
         <div>
           <p>copy</p>
-          <p className={styles.copy_icon}>c</p>
+          {/* <p className={styles.copy_icon}>c</p> */}
         </div>
       </button>
       <button className={styles.select_button} onClick={handleSelected}>
         {selected ? (
           <div>
             <p>minimize</p>
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -68,12 +68,12 @@ const NoteCard = (props: IProps) => {
                   <rect width="24" height="24" fill="white" />
                 </clipPath>
               </defs>
-            </svg>
+            </svg> */}
           </div>
         ) : (
           <div>
             <p>maximize</p>
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -91,7 +91,7 @@ const NoteCard = (props: IProps) => {
                   <rect width="24" height="24" fill="white" />
                 </clipPath>
               </defs>
-            </svg>
+            </svg> */}
           </div>
         )}
       </button>
@@ -102,7 +102,14 @@ const NoteCard = (props: IProps) => {
           : props.note.content}
       </div>
       <div className={styles.footer}>
-        <p className={styles.category}>{props.note.expand.category.name}</p>
+        <p
+          className={styles.category}
+          style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, ${props.note.expand.category.color} 40%)`,
+          }}
+        >
+          {props.note.expand.category.name}
+        </p>
         {prefix ? (
           <button
             className={styles.button_no}

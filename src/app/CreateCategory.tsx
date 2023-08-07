@@ -1,14 +1,16 @@
 "use client";
-
+import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import PocketBase from "pocketbase";
+import { CirclePicker } from "react-color";
 
 import styles from "./CreateCategory.module.scss";
 
 export default function CreateCategory(props: any) {
   const [name, setName] = useState("");
   const [show, setShow] = useState(false);
+  const [color, setColor] = useState("");
 
   const router = useRouter();
 
@@ -38,6 +40,7 @@ export default function CreateCategory(props: any) {
     try {
       const data = {
         name: name,
+        color: color,
       };
 
       const record = await pb.collection("Category").create(data);
@@ -57,15 +60,25 @@ export default function CreateCategory(props: any) {
   return (
     <div className={styles.container}>
       {show ? (
-        <form onSubmit={create} className={styles.create_form}>
-          <input
-            type="text"
-            placeholder="Naziv"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+        <div>
+          <CirclePicker
+            width="170px"
+            circleSize={20}
+            circleSpacing={8}
+            onChangeComplete={(color: any) => {
+              setColor(color.hex);
+            }}
           />
-          <button type="submit">Dodaj</button>
-        </form>
+          <form onSubmit={create} className={styles.create_form}>
+            <input
+              type="text"
+              placeholder="Naziv"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <button type="submit">Dodaj</button>
+          </form>
+        </div>
       ) : null}
       <button className={styles.add_note} onClick={showCreateCategory}>
         <svg
@@ -81,7 +94,7 @@ export default function CreateCategory(props: any) {
             width="40"
             height="15"
             transform="rotate(-90 12.5 40)"
-            fill="#067087"
+            fill="#2F8706"
           />
           <rect
             x="40"
@@ -89,7 +102,7 @@ export default function CreateCategory(props: any) {
             width="40"
             height="15"
             transform="rotate(180 40 27.5)"
-            fill="#067087"
+            fill="#2F8706"
           />
         </svg>
         {show ? <p>Odustani</p> : <p>Dodaj kategoriju</p>}

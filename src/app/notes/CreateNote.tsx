@@ -10,7 +10,12 @@ export default function CreateNote(props: any) {
 
   const router = useRouter();
 
-  const create = async () => {
+  const create = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (title.trim() === "" || content.trim() === "" || category === "") {
+      alert("Naslov, sadržaj i kategorija moraju biti ispunjeni");
+      return;
+    }
     await fetch("https://noted.pockethost.io/api/collections/notes/records", {
       method: "POST",
       headers: {
@@ -32,7 +37,6 @@ export default function CreateNote(props: any) {
 
   return (
     <form onSubmit={create}>
-      <h3>Create a new Note</h3>
       <input
         type="text"
         placeholder="Title"
