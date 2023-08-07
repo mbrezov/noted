@@ -68,15 +68,22 @@ export default function CreateCategory(props: any) {
             onChangeComplete={(color: any) => {
               setColor(color.hex);
             }}
+            className={styles.colorpicker}
           />
-          <form onSubmit={create} className={styles.create_form}>
+          <form
+            onSubmit={create}
+            className={styles.create_form}
+            style={{ backgroundColor: `${color}20` }}
+          >
             <input
               type="text"
               placeholder="Naziv"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-            <button type="submit">Dodaj</button>
+            <button type="submit" style={{ backgroundColor: `${color}90` }}>
+              Dodaj
+            </button>
           </form>
         </div>
       ) : null}
