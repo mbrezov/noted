@@ -102,14 +102,16 @@ const NoteCard = (props: IProps) => {
           : props.note.content}
       </div>
       <div className={styles.footer}>
-        <p
-          className={styles.category}
-          style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, ${props.note.expand.category.color} 40%)`,
-          }}
-        >
-          {props.note.expand.category.name}
-        </p>
+        {props.note.expand && props.note.expand.category && (
+          <p
+            className={styles.category}
+            style={{
+              backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, ${props.note.expand.category.color} 40%)`,
+            }}
+          >
+            {props.note.expand.category.name}
+          </p>
+        )}
         {prefix ? (
           <button
             className={styles.button_no}

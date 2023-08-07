@@ -38,7 +38,7 @@ export interface Data {
 }
 
 export interface Item {
-  category: string;
+  category?: string;
   collectionId: string;
   collectionName: string;
   content: string;
@@ -50,7 +50,7 @@ export interface Item {
 }
 
 export interface Expand {
-  category: Category;
+  category?: Category;
 }
 
 export interface Category {

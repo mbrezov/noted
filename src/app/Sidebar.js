@@ -3,8 +3,11 @@ import styles from "./Sidebar.module.scss";
 import { useState, useEffect } from "react";
 import CreateNote from "./notes/CreateNote";
 import CreateCategory from "./CreateCategory";
+import PocketBase from "pocketbase";
 
 const Sidebar = () => {
+  const pb = new PocketBase("https://noted.pockethost.io");
+
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch("https://noted.pockethost.io/api/collections/Category/records/")
@@ -13,6 +16,16 @@ const Sidebar = () => {
         setData(res.items);
       });
   }, []);
+
+  const deleteCategory = async (recordId) => {
+    try {
+      await pb.collection("Category").delete(recordId);
+      // You may need to update the state or refresh the data here
+      setData(data.filter((cat) => cat.id !== recordId));
+    } catch (error) {
+      console.error("Error deleting category:", error);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -26,6 +39,7 @@ const Sidebar = () => {
                 style={{ backgroundColor: cat.color }}
               ></div>
               {cat.name}
+              <button onClick={() => deleteCategory(cat.id)}>Delete</button>
             </div>
           ))}
       </div>
