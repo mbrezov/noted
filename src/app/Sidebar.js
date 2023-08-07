@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import CreateNote from "./notes/CreateNote";
 import CreateCategory from "./CreateCategory";
 import PocketBase from "pocketbase";
+import Navbar from "./notes/Navbar";
 
 const Sidebar = () => {
   const pb = new PocketBase("https://noted.pockethost.io");
@@ -65,7 +66,7 @@ const Sidebar = () => {
       <div>
         <CreateCategory />
       </div>
-      {/* <CreateNote category={data} /> */}
+      <CreateNote category={data} />
     </div>
   );
 };
