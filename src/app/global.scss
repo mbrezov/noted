@@ -8,3 +8,18 @@ body {
   grid-template-areas: "sidebar notes";
   background-color: #121212;
 }
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #6e6b6b;
+  outline: 1px solid #6e6b6b;
+  border-radius: 5px;
+}

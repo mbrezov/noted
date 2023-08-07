@@ -17,13 +17,15 @@ const Sidebar = () => {
   return (
     <div className={styles.container}>
       <h1>Kategorije</h1>
-      {data &&
-        data.map((cat) => (
-          <div key={cat.id} className={styles.category}>
-            <div className={styles.category_color}></div>
-            {cat.name}
-          </div>
-        ))}
+      <div className={styles.category_container}>
+        {data &&
+          data.map((cat) => (
+            <div key={cat.id} className={styles.category}>
+              <div className={styles.category_color}></div>
+              {cat.name}
+            </div>
+          ))}
+      </div>
       <div>
         <CreateCategory />
       </div>

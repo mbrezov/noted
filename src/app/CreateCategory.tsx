@@ -49,6 +49,7 @@ export default function CreateCategory(props: any) {
       console.error("Error creating category:", error);
     }
   };
+
   const showCreateCategory = () => {
     setShow(!show);
   };
