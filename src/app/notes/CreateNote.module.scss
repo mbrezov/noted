@@ -14,7 +14,7 @@
   background: #383838;
   position: relative;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 10px 0 0;
 
   .input_container {
     display: flex;
@@ -25,6 +25,7 @@
     .title {
       height: 20px;
       font-weight: 600;
+      padding-left: 10px;
     }
 
     .title::placeholder {
@@ -32,11 +33,13 @@
     }
 
     .content {
+      padding-left: 10px;
       overflow-y: scroll;
       overflow-x: hidden;
       height: 250px;
       resize: none;
     }
+
     .content::placeholder {
       font-size: 1.1rem;
     }
@@ -45,6 +48,16 @@
       font-size: 1rem;
       appearance: none;
       margin-top: 5px;
+      font-weight: 600;
+      width: 80%;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 60%,
+        #3549b0 40%
+      );
+      border-radius: 0 0 0 8px;
+      padding-left: 5px;
+      padding-bottom: 2px;
     }
 
     .create_button {

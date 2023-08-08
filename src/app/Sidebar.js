@@ -1,10 +1,8 @@
 "use client";
 import styles from "./Sidebar.module.scss";
 import { useState, useEffect } from "react";
-import CreateNote from "./notes/CreateNote";
 import CreateCategory from "./CreateCategory";
 import PocketBase from "pocketbase";
-import Navbar from "./notes/Navbar";
 
 const Sidebar = () => {
   const pb = new PocketBase("https://noted.pockethost.io");
