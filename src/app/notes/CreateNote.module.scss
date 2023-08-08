@@ -7,6 +7,7 @@
 }
 
 .container {
+  animation: fadeIn 1000ms;
   width: 600px;
   display: flex;
   flex-direction: column;
@@ -34,8 +35,7 @@
 
     .content {
       padding-left: 10px;
-      overflow-y: scroll;
-      overflow-x: hidden;
+      overflow: auto;
       height: 250px;
       resize: none;
     }
@@ -83,4 +83,13 @@
   background-color: #6e6b6b;
   outline: 1px solid #6e6b6b;
   border-radius: 5px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
