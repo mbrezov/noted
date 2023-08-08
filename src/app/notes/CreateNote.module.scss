@@ -7,7 +7,7 @@
 }
 
 .container {
-  width: 300px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,6 +23,7 @@
 
     .title {
       height: 20px;
+      font-weight: 600;
     }
 
     .title::placeholder {
@@ -38,6 +39,7 @@
     }
 
     .category {
+      font-size: 1rem;
       appearance: none;
     }
 
@@ -54,4 +56,14 @@
       font-size: 1.1rem;
     }
   }
+}
+
+.container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: #6e6b6b;
+  outline: 1px solid #6e6b6b;
+  border-radius: 5px;
 }
