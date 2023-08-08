@@ -60,7 +60,7 @@ export default function CreateNote(props: any) {
           name="category"
           onChange={(e) => setCategory(e.target.value)}
         >
-          <option value="">Kategorija:</option>
+          <option value="">Odaberi kategoriju:</option>
           {props.category &&
             props.category.map((category: any) => (
               <option key={category.id} value={category.id}>
