@@ -102,7 +102,7 @@ const NoteCard = (props: IProps) => {
           : props.note.content}
       </div>
       <div className={styles.footer}>
-        {props.note.expand && props.note.expand.category && (
+        {props.note.expand && props.note.expand.category ? (
           <p
             className={styles.category}
             style={{
@@ -111,6 +111,8 @@ const NoteCard = (props: IProps) => {
           >
             {props.note.expand.category.name}
           </p>
+        ) : (
+          <p className={styles.category}>Nema kategorije</p>
         )}
         {prefix ? (
           <button
