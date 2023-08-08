@@ -1,5 +1,12 @@
 .container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar_container {
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 60px;

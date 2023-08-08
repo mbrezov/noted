@@ -1,0 +1,57 @@
+.input_container > * {
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  font-family: inherit;
+}
+
+.container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #383838;
+  position: relative;
+  border-radius: 10px;
+  padding: 10px;
+
+  .input_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .title {
+      height: 20px;
+    }
+
+    .title::placeholder {
+      font-size: 1.1rem;
+    }
+
+    .content {
+      height: 200px;
+      resize: none;
+    }
+    .content::placeholder {
+      font-size: 1.1rem;
+    }
+
+    .category {
+      appearance: none;
+    }
+
+    .create_button {
+      width: 80px;
+      height: 30px;
+      background-color: #067087;
+      border-radius: 10px;
+      transform: rotate(-90deg);
+      position: absolute;
+      bottom: 40px;
+      right: -10px;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+  }
+}

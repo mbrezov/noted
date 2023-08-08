@@ -66,7 +66,7 @@ const Sidebar = () => {
       <div>
         <CreateCategory />
       </div>
-      <CreateNote category={data} />
+      {/* <CreateNote category={data} /> */}
     </div>
   );
 };

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import styles from "./CreateNote.module.scss";
+
 export default function CreateNote(props: any) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -36,32 +38,40 @@ export default function CreateNote(props: any) {
   };
 
   return (
-    <form onSubmit={create}>
-      <input
-        type="text"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <textarea
-        placeholder="Content"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-      />
-      <select
-        id="category"
-        name="category"
-        onChange={(e) => setCategory(e.target.value)}
-      >
-        <option value="">Kategorija:</option>
-        {props.category &&
-          props.category.map((category: any) => (
-            <option key={category.id} value={category.id}>
-              {category.name}
-            </option>
-          ))}
-      </select>
-      <button type="submit">Create note</button>
+    <form onSubmit={create} className={styles.container}>
+      <div className={styles.input_container}>
+        <input
+          className={styles.title}
+          type="text"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <textarea
+          className={styles.content}
+          placeholder="Content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
+
+        <select
+          className={styles.category}
+          id="category"
+          name="category"
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="">Kategorija:</option>
+          {props.category &&
+            props.category.map((category: any) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+        </select>
+        <button type="submit" className={styles.create_button}>
+          Kreiraj
+        </button>
+      </div>
     </form>
   );
 }
