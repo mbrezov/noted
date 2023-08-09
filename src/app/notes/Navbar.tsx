@@ -32,7 +32,12 @@ const Navbar = () => {
             className={styles.searchbar}
           />
         </div>
-        <button className={styles.add_note} onClick={AddNoteHandler}>
+        <button
+          className={`${styles.add_note} ${
+            addNote ? styles.rotate : styles.rotate_back
+          }`}
+          onClick={AddNoteHandler}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"

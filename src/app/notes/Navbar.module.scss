@@ -65,6 +65,26 @@
       margin: 0 0 20px 70px;
     }
   }
+
+  .rotate {
+    svg {
+      animation: rotation 1s;
+      transform: rotate(45deg);
+    }
+
+    p {
+      animation: fadeIn 1.5s;
+      margin: 0 0 0px 70px;
+    }
+  }
+
+  .rotate_back {
+    svg {
+      animation: rotationBack 1s;
+      transform: rotate(0deg);
+    }
+  }
+
   .hasek {
     font-family: inherit;
     display: flex;
@@ -77,5 +97,32 @@
     color: #d5dbd4;
     text-decoration: none;
     font-weight: 600;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes rotationBack {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

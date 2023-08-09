@@ -87,7 +87,12 @@ export default function CreateCategory(props: any) {
           </form>
         </div>
       ) : null}
-      <button className={styles.add_note} onClick={showCreateCategory}>
+      <button
+        className={`${styles.add_note} ${
+          show ? styles.rotate : styles.rotate_back
+        }`}
+        onClick={showCreateCategory}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="40"

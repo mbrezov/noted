@@ -4,10 +4,12 @@
   margin-bottom: 15px;
 
   .colorpicker {
+    animation: fadeIn 1.4s;
     padding: 20px 0 10px 0;
   }
 
   .create_form {
+    animation: fadeIn 1.4s;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -56,5 +58,51 @@
       position: absolute;
       margin: 0 0 20px 90px;
     }
+  }
+
+  .rotate {
+    svg {
+      animation: rotation 1s;
+      transform: rotate(45deg);
+    }
+
+    p {
+      animation: fadeIn 1.4s;
+      margin: 0 0 0px 70px;
+    }
+  }
+
+  .rotate_back {
+    svg {
+      animation: rotationBack 1s;
+      transform: rotate(0deg);
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes rotationBack {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
