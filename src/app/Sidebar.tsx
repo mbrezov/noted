@@ -16,11 +16,11 @@ const Sidebar = () => {
       });
   }, []);
 
-  const deleteCategory = async (recordId) => {
+  const deleteCategory = async (recordId: any) => {
     try {
       await pb.collection("Category").delete(recordId);
       // You may need to update the state or refresh the data here
-      setData(data.filter((cat) => cat.id !== recordId));
+      setData(data.filter((cat: any) => cat.id !== recordId));
     } catch (error) {
       console.error("Error deleting category:", error);
     }
@@ -31,7 +31,7 @@ const Sidebar = () => {
       <h1>Kategorije</h1>
       <div className={styles.category_container}>
         {data &&
-          data.map((cat) => (
+          data.map((cat: any) => (
             <div key={cat.id} className={styles.category}>
               <div
                 className={styles.category_color}
